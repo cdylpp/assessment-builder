@@ -1,0 +1,28 @@
+# Python virtual environments
+venv/
+.venv/
+env/
+.env/
+
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Packaging and build artifacts
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# Test, coverage, and type-check caches
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# Local environment files
+.env.local
+.env.*.local
