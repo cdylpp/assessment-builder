@@ -1,0 +1,8 @@
+[project]
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "sqlalchemy",
+    "yyaml",
+    "httpx"
+]
