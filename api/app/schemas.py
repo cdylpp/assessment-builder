@@ -16,7 +16,7 @@ class EvolutionCreate(BaseModel):
     stable_key: str
     name: str
     description: str | None = None
-    metric_ids = list[int]
+    metric_ids: list[int]
 
 class EventCreate(BaseModel):
     assessment_id: int
