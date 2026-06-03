@@ -47,7 +47,7 @@ class Event(Base):
     __tablename__ = "events"
 
     id: Mapped[int] = mapped_column(primary_key=True)
-    assessment_id: Mapped[int] = mapped_column(ForeignKey("assessment.id"))
+    assessment_id: Mapped[int] = mapped_column(ForeignKey("assessments.id"))
     name: Mapped[str] = mapped_column(String(200))
     status: Mapped[str] = mapped_column(String(50), default="draft")
 
