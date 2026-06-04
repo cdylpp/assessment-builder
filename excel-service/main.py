@@ -20,7 +20,7 @@ def generate(payload: dict):
 
     ws.append(["Evolution", "Metric", "Type", "Domain", "Score", "Notes"])
 
-    for evolution in payload["event"]["evolution"]:
+    for evolution in payload["event"]["evolutions"]:
         for metric in evolution["metrics"]:
             ws.append([
                 evolution["name"],

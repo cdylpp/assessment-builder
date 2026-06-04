@@ -19,7 +19,7 @@ services:
     build: ./api
     environment:
       DATABASE_URL: postgresql+psycopg://app:app@db:5432/assessments
-      EXECL_SERVICE_URL: http://excel-service:8001
+      EXCEL_SERVICE_URL: http://excel-service:8001
     ports:
       - "8000:8000"
     depends_on:
@@ -38,7 +38,7 @@ services:
   frontend:
     build: ./frontend
     environment:
-      VITE_API_URL: http//localhost:8000
+      VITE_API_URL: http://localhost:8000
     ports:
       - "5173:5173"
     depends_on:

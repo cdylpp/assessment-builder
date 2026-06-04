@@ -3,6 +3,6 @@ dependencies = [
     "fastapi",
     "uvicorn",
     "sqlalchemy",
-    "yyaml",
+    "pyyaml",
     "httpx"
 ]

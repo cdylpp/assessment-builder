@@ -1,6 +1,5 @@
 # CRUD Routes
 import os
-import yaml
 import httpx
 from fastapi import APIRouter, Depends
 from fastapi.responses import Response
@@ -34,7 +33,7 @@ def create_metric(payload: schemas.MetricCreate, db: Session=Depends(get_db)):
     db.refresh(row)
     return row
 
-@router.post("/evolution")
+@router.post("/evolutions")
 def create_evolution(payload: schemas.EvolutionCreate, db: Session = Depends(get_db)):
     latest = (
         db.query(models.Evolution)
@@ -61,6 +60,7 @@ def create_evolution(payload: schemas.EvolutionCreate, db: Session = Depends(get
             display_order=i
         ))
     db.commit()
+    db.refresh(evo)
     return evo
 
 @router.post("/events")
@@ -81,8 +81,10 @@ def create_event(payload: schemas.EventCreate, db: Session = Depends(get_db)):
             display_order=i
         ))
     db.commit()
+    db.refresh(event)
     return event
 
+@router.get("/events/{event_id}/export")
 @router.post("/events/{event_id}/export")
 def export_event(event_id: int, db: Session = Depends(get_db)):
     payload = build_event_yaml(event_id, db)
@@ -118,7 +120,7 @@ def build_event_yaml(event_id: int, db: Session):
         )
         metrics = []
         for metric_link in metric_links:
-            metric = db.get(models.Metric, metric.id)
+            metric = db.get(models.Metric, metric_link.metric_id)
             metrics.append({
                 "id":metric.id,
                 "stable_key": metric.stable_key,
