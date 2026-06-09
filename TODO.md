@@ -8,6 +8,8 @@
 - Variable Library
 - Search, sort, filter
 - adding competencies to methods is clunky.
+- Delete an observation
+- Invalid for the offending label or textbox.
 
 ## New Feature: Administer Assessment
 
@@ -425,3 +427,5 @@ Phase 5: hardening
 ### Open Questions
 
 1. Participant surveys may fit as methods, but the survey model needs more design. Example: participant ranks top 5 peers, assigns negative rankings to candidates, and may add comments to any candidate.
+
+
