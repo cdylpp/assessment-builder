@@ -7,6 +7,13 @@
     "types": ["vite/client"],
     "skipLibCheck": true,
 
+    // component lib
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
+
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
