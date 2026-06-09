@@ -1,4 +1,5 @@
 from io import BytesIO
+import json
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import Response
 from openpyxl import Workbook
@@ -12,6 +13,11 @@ app = FastAPI()
 def health():
     return {"status": "ok"}
 
+def excel_cell_value(value):
+    if isinstance(value, (dict, list)):
+        return json.dumps(value)
+    return value
+
 @app.post("/generate")
 def generate(payload: dict):
     wb = Workbook()
@@ -23,10 +29,10 @@ def generate(payload: dict):
     for evolution in payload["event"]["evolutions"]:
         for metric in evolution["metrics"]:
             ws.append([
-                evolution["name"],
-                metric["name"],
-                metric["type"],
-                metric["domain"],
+                excel_cell_value(evolution["name"]),
+                excel_cell_value(metric["name"]),
+                excel_cell_value(metric["type"]),
+                excel_cell_value(metric["domain"]),
                 "",
                 ""
             ])
