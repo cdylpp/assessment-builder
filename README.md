@@ -11,3 +11,19 @@ The architecture is quite simple.
 The user diagram shows the relationships between the components
 ![User Diagram](/assets/userdiagram.png)
 
+
+## Quickstart
+
+Docker desktop is required to run the application.
+
+To run the server:
+
+```bash
+make dev
+```
+
+To close down the server
+```bash
+make down
+```
+
