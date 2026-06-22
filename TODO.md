@@ -10,6 +10,8 @@
 - adding competencies to methods is clunky.
 - Delete an observation
 - Invalid for the offending label or textbox.
+- Assessment versioning. Add AsssessmentVersion captures version_number, status, created_at, created_by, change_note...
+- Change the UI to use the blocks. 
 
 ## New Feature: Administer Assessment
 

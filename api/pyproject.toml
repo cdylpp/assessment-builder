@@ -4,5 +4,6 @@ dependencies = [
     "uvicorn",
     "sqlalchemy",
     "pyyaml",
-    "httpx"
+    "httpx",
+    "dotenv"
 ]
